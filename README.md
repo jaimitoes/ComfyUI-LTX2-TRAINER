@@ -4,7 +4,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 
 
 
-\*\*LTX2-TRAINER BATMAN EDITION\*\*
+**LTX2-TRAINER BATMAN EDITION**
 <img width="1920" height="512" alt="Flux2-Klein_00015_" src="https://github.com/user-attachments/assets/3d80e48b-8893-4f60-9f21-be2123baf87e" />
 
 
@@ -19,7 +19,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 
 
 
-\*Adaptation of the LTX2-Training lora for ComfyUI.
+**Adaptation of the LTX2-Training lora for ComfyUI**.
 
 
 
@@ -27,27 +27,27 @@ Features:
 
 
 
-\* LTX 2.0 and LTX 2.3 training.
+* LTX 2.0 and LTX 2.3 training.
 
-\* All LTX features implemented.
+* All LTX features implemented.
 
-\* Train TI2V or video to video (Ic-LoRA).
+* Train TI2V or video to video (Ic-LoRA).
 
-\* Added toggles per modules.
+* Added toggles per modules.
 
-\* Automatic generation of captioning with QwenOmni \[24GB-VRAM].
+* Automatic generation of captioning with QwenOmni \[24GB-VRAM].
 
-\* Automatic generation of captioning with Qwen3VL and Transcribe (Faster and better than Qwen Omni) \[12GB-VRAM]
+* Automatic generation of captioning with Qwen3VL and Transcribe (Faster and better than Qwen Omni) \[12GB-VRAM]
 
-\* Modular groups to toggle between captioning and training (these are separated to inspect your Json file to make you desired changes if needed).
+* Modular groups to toggle between captioning and training (these are separated to inspect your Json file to make you desired changes if needed).
 
-\* You can customize your workflow with your prefered nodes, being able to click and run all in a single shot.
+* You can customize your workflow with your prefered nodes, being able to click and run all in a single shot.
 
-\* You just need to pass your videos folder and set up your trigger lora. Everything is packed in the same folder, the json is generated with the same name of your lora.
+* You just need to pass your videos folder and set up your trigger lora. Everything is packed in the same folder, the json is generated with the same name of your lora.
 
-\* Compatible with 12GB of VRAM (need minimum 96GB of Ram to run smoothly in 8 bits, needed for quantization).
+* Compatible with 12GB of VRAM (need minimum 96GB of Ram to run smoothly in 8 bits, needed for quantization).
 
-\* Path injections for FFmpeg and LTX2 scripts to make it compatible with comfyUI. (Voices a are perfect with 2.3 version)
+* Path injections for FFmpeg and LTX2 scripts to make it compatible with comfyUI. (Voices a are perfect with 2.3 version)
 
 
 
@@ -55,49 +55,49 @@ Comparision with LTX2 github repository:
 
 
 
-\* Crash fix quantizing a model in 8 bit.
+* Crash fix quantizing a model in 8 bit.
 
-\* Crash fix getting you an OMM caused to send everything into cpu. 
+* Crash fix getting you an OMM caused to send everything into cpu. 
 
-\* Now the text encoder is sent to the cpu on preparing models, then the trasformer is placed first in GPU for fast quantization (before audio models).
+* Now the text encoder is sent to the cpu on preparing models, then the trasformer is placed first in GPU for fast quantization (before audio models).
 
-\* Audio models are loaded after the quantization process of the model if requiered, ensuring better performance.
+* Audio models are loaded after the quantization process of the model if requiered, ensuring better performance.
 
-\* Added strategic cuda cleanups during the preparation of models and also in each validation.
+* Added strategic cuda cleanups during the preparation of models and also in each validation.
 
-\* removed unnecesary model moves between cpu-cuda.
+* removed unnecesary model moves between cpu-cuda.
 
-\* Decorated and disabled all the functions that makes unnecesary Dynamo crash-graphs making a recompilation hit in the very beggining of validations. Also for those functions that handle context managment and affects to inductor.
+* Decorated and disabled all the functions that makes unnecesary Dynamo crash-graphs making a recompilation hit in the very beggining of validations. Also for those functions that handle context managment and affects to inductor.
 
-\* Now the train make only a few recompiles instead of 77 for the full process (Very important to make it fly).
+* Now the train make only a few recompiles instead of 77 for the full process (Very important to make it fly).
 
-\* Memory cleaning in video generations detaching  and sending it to the cpu and then to the garbage collector.
+* Memory cleaning in video generations detaching  and sending it to the cpu and then to the garbage collector.
 
-\* Now validations does not break the performance if there is more than 1 sampling to generate (there could be a decreasing if you are running in low Vram, but the train is stable).
+* Now validations does not break the performance if there is more than 1 sampling to generate (there could be a decreasing if you are running in low Vram, but the train is stable).
 
-\* Now the training is very stable per step, even more in the subsequent validations.
+* Now the training is very stable per step, even more in the subsequent validations.
 
-\* Captining clean Vram in every batch.
+* Captining clean Vram in every batch.
 
-\* Now The preprocessing inspect each files to see if there is missing lantents from the full batch or discard preprocessing it again if exists (good if you make a mistake and you need to cancel or preserve the folder jumping directly to training from nodes).
+* Now The preprocessing inspect each files to see if there is missing lantents from the full batch or discard preprocessing it again if exists (good if you make a mistake and you need to cancel or preserve the folder jumping directly to training from nodes).
 
-\* Crash fix decoding preprocesses (option to inspect your encoded latents).
+* Crash fix decoding preprocesses (option to inspect your encoded latents).
 
-\* Removed some progress bars and replaced per logs in the main process for comfyUI.
+* Removed some progress bars and replaced per logs in the main process for comfyUI.
 
-\* Checkpoint loading fix by placing step 0 in the init of the train object instead of defining it in the train definition (Avoiding to reset a checkpoint lora and make it learn from scratch).
-
-
+* Checkpoint loading fix by placing step 0 in the init of the train object instead of defining it in the train definition (Avoiding to reset a checkpoint lora and make it learn from scratch).
 
 
 
 
 
-\*\*Benchmark\*\*:
+
+
+**Benchmark**:
 
 
 
-\*Environment\*:
+*Environment*:
 
 \* ComfyUI windows portable (latest version 3-17-2026).
 
