@@ -12,6 +12,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 </a>
 *Stay tunned if i need to update intial changes in the instalation instrucctions, testing it in other users to check everything works correctly in terms of paths, once this message is removed, it will mean everything is tested and working correctly**.
 **Adaptation of the LTX2-Training lora for ComfyUI**.
+<img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
 **Features**:
 
@@ -130,6 +131,14 @@ After the first validation loop everything is stable, a proof of the ending step
 * uv_build
 * hatchling
 * editables
+
+**Other custom nodes dependencies for the alternative captioner x100 faster (kudos for the creators)**
+* TTS audio suite from https://github.com/diodiogod/TTS-Audio-Suite. Kudos.
+* comfyui-qwenvl
+* ComfyUI-Custom-Scripts
+* ComfyUI-Easy-Use
+* ComfyUI-VideoHelperSuite
+* comfy-mtb
 
 pip install -e packages/ltx-core
 
