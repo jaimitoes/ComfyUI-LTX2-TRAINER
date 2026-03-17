@@ -82,11 +82,19 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 
 * Final FP8 Lora : Best time around 5h (without taking into account validations) to generate a 2000 steps lora. So, i can't imagine with a 5090. Don't be rat and buy me a coffe.
 
+
+https://github.com/user-attachments/assets/cd2edde8-271b-48f5-b11d-3c1575a4cc67
+
+
 * Best time per step 8.66. 
 
 Some screen shots to take into consideration the graph stability:
+<img width="775" height="828" alt="Captura de pantalla 2026-03-17 041354" src="https://github.com/user-attachments/assets/25f43b76-548d-4d92-a58d-0ffa211389a3" />
+
+After the first validation loop everything is stable, a proof of the ending steps :
 
 
+<img width="791" height="993" alt="Captura de pantalla 2026-03-17 140618" src="https://github.com/user-attachments/assets/277d3eb4-ba82-4d87-977f-2f4e2f58c9bb" />
 
 * After code changes, graphs nevermore recompiles mantaining the stability until the end of training.
 * There is the need of one loop Interval between train/eval to starting watching the performance and stability. Probally this is not happening in big Gpus but take into account that, you are training with 12GB and this is already a success so, start the train, go to sleep and enjoy it in the morning.
