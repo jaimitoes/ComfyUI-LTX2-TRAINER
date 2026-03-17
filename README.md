@@ -5,6 +5,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 
 
 \*\*LTX2-TRAINER BATMAN EDITION\*\*
+<img width="1920" height="512" alt="Flux2-Klein_00015_" src="https://github.com/user-attachments/assets/3d80e48b-8893-4f60-9f21-be2123baf87e" />
 
 
 
@@ -223,6 +224,7 @@ for portable (open terminal in the ComfyUI-LTX2-TRAINER custom node):
 
 
 
+<img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
 
 
