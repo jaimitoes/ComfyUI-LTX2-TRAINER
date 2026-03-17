@@ -10,7 +10,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 &#x20; <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
 
 </a>
-
+*Stay tunned if i need to update intial changes in the instalation instrucctions, testing it in other users to check everything works correctly in terms of paths, once this message is removed, it will mean everything is tested and working correctly**.
 **Adaptation of the LTX2-Training lora for ComfyUI**.
 
 **Features**:
