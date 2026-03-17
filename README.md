@@ -82,6 +82,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 
 * Final FP8 Lora : Best time around 5h (without taking into account validations) to generate a 2000 steps lora. So, i can't imagine with a 5090. Don't be rat and buy me a coffe.
 
+**FP8 LORA EXAMPLE (90's vhs style)**:
 
 https://github.com/user-attachments/assets/cd2edde8-271b-48f5-b11d-3c1575a4cc67
 
