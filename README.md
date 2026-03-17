@@ -132,7 +132,7 @@ pip install -e packages/ltx-pipelines
 
 pip install -e packages/ltx-ltx-trainer
 
-**for portable (open terminal in the ComfyUI-LTX2-TRAINER custom node)**:
+**for portable (open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\LTX-2)**:
 
 ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-core
 
