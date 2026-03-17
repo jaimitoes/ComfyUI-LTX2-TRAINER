@@ -122,6 +122,9 @@ After the first validation loop everything is stable, a proof of the ending step
 
 **Instalation instruction**:
 
+* Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-4b-it-qat-int4-unquantized
+* You can use any of the LTX.2X .safetensors models.
+
 pip install -e packages/ltx-core
 
 pip install -e packages/ltx-pipelines
@@ -135,6 +138,7 @@ pip install -e packages/ltx-ltx-trainer
 ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-pipelines
 
 ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
+
 
 <img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
