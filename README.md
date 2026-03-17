@@ -121,7 +121,7 @@ After the first validation loop everything is stable, a proof of the ending step
 **Troubleshootings**:
 The only subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture:
 * If you<img width="1296" height="566" alt="Captura de pantalla 2026-03-17 220825" src="https://github.com/user-attachments/assets/17fb5fe2-6d61-46ad-98ef-291a114e2d79" />
-* Custom nodes changes between updates, in the moment of pushing this, new options as setted up qwen vl nodes, make sure to enter into the subgraph and check everything again (subgraphs are a bit dirty in that aspect).
+* Custom nodes changes between updates, in the moment of pushing this, new options as setted up qwen vl nodes (Also there is different versions with the same name and can create conflicts) If you still in troubles with it you also have the QwenOmni node Used by LTX-2, make sure to enter into the subgraph and check everything again (subgraphs are a bit dirty in that aspect).
 <img width="1888" height="730" alt="Captura de pantalla 2026-03-17 222702" src="https://github.com/user-attachments/assets/c832a22c-2eda-4f67-8167-293f2facb25b" />
 * If you are getting issues with hf or Transformers online go to ltx_environment.py file and uncomment the offline of this modules (a restart of the console is required).
 <img width="695" height="325" alt="Captura de pantalla 2026-03-17 224636" src="https://github.com/user-attachments/assets/46297862-c0f2-42e0-b793-4e3e27db78db" />
