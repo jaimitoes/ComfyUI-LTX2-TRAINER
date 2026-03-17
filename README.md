@@ -120,7 +120,7 @@ After the first validation loop everything is stable, a proof of the ending step
 
 **Troubleshootings**:
 
-* You must to Run in Xformers (nvidia bat). IF you run with sageattention you will get crash caused by a mismatch shape tensor in the preprocessing and training. Be sure to use xformers. 
+* You must to Run in Xformers (nvidia bat). IF you run with sageattention you will get a crash caused by a mismatch shape tensor in the preprocessing and training. Be sure to use xformers. 
 
 * The only subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture:
 
