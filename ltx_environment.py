@@ -18,8 +18,8 @@ def _init_env():
     os.environ["PYTHONIOENCODING"] = "utf-8"
     os.environ["USE_LIBUV"] = "0"
     #-----TRAIN OFFLINE------------
-    os.environ["HF_HUB_OFFLINE"] = "1"
-    os.environ["TRANSFORMERS_OFFLINE"] = "1"
+    #os.environ["HF_HUB_OFFLINE"] = "1"
+    #os.environ["TRANSFORMERS_OFFLINE"] = "1"
     
     
 
