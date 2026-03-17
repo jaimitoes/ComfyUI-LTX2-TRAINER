@@ -119,13 +119,18 @@ After the first validation loop everything is stable, a proof of the ending step
 * MultiGpu should work, i take care to retain all the logic of the core but removed some progress stadistic like bars (printing steps instead). to place all the training data in the main process, keeping just the training in the multiprocess (in search of performance). Unfortunately, i don't have a MultiGpu system to test it. But, if you any issue let me know and i will fix it.
 
 **Troubleshootings**:
-The only subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture:
+
+* You must to Run in Xformers (nvidia bat). IF you run with sageattention you will get crash caused by a mismatch shape tensor in the preprocessing and training. Be sure to use xformers. 
+
+* The only subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture:
 
 <img width="1296" height="566" alt="Captura de pantalla 2026-03-17 220825" src="https://github.com/user-attachments/assets/17fb5fe2-6d61-46ad-98ef-291a114e2d79" />
 
 * Custom nodes changes between updates, in the moment of pushing this, new options as setted up qwen vl nodes (Also there is different repositories with the same and can create conflicts), use the 2.1.0 QwenVL version,  make sure to enter into the subgraph and check everything again (subgraphs are a bit dirty in that aspect).
   
 <img width="1888" height="730" alt="Captura de pantalla 2026-03-17 222702" src="https://github.com/user-attachments/assets/c832a22c-2eda-4f67-8167-293f2facb25b" />
+
+* Be sure to make a restart after creating you JSON caption (Clear Vram because transcribe nodes does not free the vram memory).
 
 * To download automatically caption models you need HF online but, If you are getting issues with hf or Transformers, in the step of training [after getting models] go to the file "ltx_environment.py" and uncomment the offline of this modules (a restart of the console is required).
 
