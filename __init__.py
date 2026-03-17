@@ -22,7 +22,7 @@ from .comfy_ltx2_training_nodes import (
     LTX2_SceneSplitter, LTX2_AutoCaptioning, LTX2_CreateConfig, 
     LTX2_RunPreprocess, LTX2_RunTraining
 )
-from .file_counter import FileCounter
+from .file_counter import FileCounter, SimpleStringAccumulator
 from .path_accumulator import PathAccumulator
 from .json_saver import JsonPrettifierSaver, EscapeQuotesForJson
 
@@ -35,7 +35,8 @@ NODE_CLASS_MAPPINGS = {
     "FileCounter": FileCounter,
     "PathAccumulator" : PathAccumulator,
     "JsonPrettifierSaver": JsonPrettifierSaver,
-    "EscapeQuotesForJson": EscapeQuotesForJson
+    "EscapeQuotesForJson": EscapeQuotesForJson,
+    "SimpleStringAccumulator": SimpleStringAccumulator
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -47,7 +48,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "FileCounter": "File Counter",
     "PathAccumulator": "Path Accumulator",
     "JsonPrettifierSaver": "JSON Prettifier & Saver",
-    "EscapeQuotesForJson": "STRING escape quotes"
+    "EscapeQuotesForJson": "STRING escape quotes",
+    "SimpleStringAccumulator": "Simple String Accumulator"
 }
 
 __all__ =["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
