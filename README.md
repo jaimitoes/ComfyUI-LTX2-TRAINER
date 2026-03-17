@@ -143,6 +143,7 @@ pip install -e packages/ltx-ltx-trainer
 
 <img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
+**Unfortunatelly, i can't commit my changes directly into LTX-2 repository, there is so many changes and paths inyections. But if LTX-2 want to take a look into it, they are welcome here**.
 Visit https://github.com/Lightricks/LTX-2 to have the full documentation to mastering your loras.
 
 
