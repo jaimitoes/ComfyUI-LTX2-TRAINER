@@ -127,7 +127,7 @@ The only subgraph could be broken of what is showing depending of the comfyUI ve
   
 <img width="1888" height="730" alt="Captura de pantalla 2026-03-17 222702" src="https://github.com/user-attachments/assets/c832a22c-2eda-4f67-8167-293f2facb25b" />
 
-* If you are getting issues with hf or Transformers online go to ltx_environment.py file and uncomment the offline of this modules (a restart of the console is required).
+* To download automatically caption models you need HF online but, If you are getting issues with hf or Transformers, in the step of training [after getting models] go to the file "ltx_environment.py" and uncomment the offline of this modules (a restart of the console is required).
 
 <img width="695" height="325" alt="Captura de pantalla 2026-03-17 224636" src="https://github.com/user-attachments/assets/46297862-c0f2-42e0-b793-4e3e27db78db" />
 
