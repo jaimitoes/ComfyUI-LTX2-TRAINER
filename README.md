@@ -140,6 +140,8 @@ pip install -e packages/ltx-ltx-trainer
 
 ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
 
+IF YOU HAVE ERRORS INSTALLING, YOU MUST TO DEAL WITH THE DEPENDENCIES SHOWN IN THE CONSOLE THAT YOU ARE MISSING IN YOUR PYTHON ENVRIONMENT (SORRY ABOUT THAT)**
+
 
 <img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
