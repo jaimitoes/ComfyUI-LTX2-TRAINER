@@ -144,7 +144,7 @@ After the first validation loop everything is stable, a proof of the ending step
 
 **Instalation instruction**:
 
-* Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-4b-it-qat-int4-unquantized
+* Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/tree/main
 * You can use any of the LTX.2X .safetensors models.
 
 **Dependencies needed (python -m pip install)**:
