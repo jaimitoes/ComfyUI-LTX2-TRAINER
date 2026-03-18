@@ -166,13 +166,9 @@ After the first validation loop everything is stable, a proof of the ending step
 
 <img width="695" height="325" alt="Captura de pantalla 2026-03-17 224636" src="https://github.com/user-attachments/assets/46297862-c0f2-42e0-b793-4e3e27db78db" />
 
-* Be sure to remove the lora checkpoint from the workflow example and setup correctly your model paths (copy the route of your models and remove the "quotes" before runnint it).
-
-<img width="1015" height="500" alt="Captura de pantalla 2026-03-17 230741" src="https://github.com/user-attachments/assets/b781121d-b58f-4e88-9040-d70bc6b67121" />
-
 * If the subgraph presets are loosed (caused by comfy updates) reset it and activate the following in the picture :
-<img width="2272" height="683" alt="image" src="https://github.com/user-attachments/assets/40f2a5a0-888a-44d0-9644-cd845d659adb" />
-
+  
+<img width="2047" height="714" alt="image" src="https://github.com/user-attachments/assets/c17da168-db96-4a03-8c3c-6ceeff8cea76" />
 
 **training that appears blocked or too slow**:
 
