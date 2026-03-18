@@ -14,6 +14,10 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 **Adaptation of the LTX2-Training lora for ComfyUI**.
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
+
+Version 1.02:
+* Added a new workflow to split your long video into the desired bucket frame-len.
+
 Version 1.01:
 * Instructions updated.
 * Link to the proper text encoder for training fixed.
@@ -185,6 +189,7 @@ After the first validation loop everything is stable, a proof of the ending step
 * ComfyUI-Easy-Use
 * ComfyUI-VideoHelperSuite
 * comfy-mtb
+* custom-scripts
 
 **xformers wheel for python 2.10 cuda 130 python 3.13**
 
