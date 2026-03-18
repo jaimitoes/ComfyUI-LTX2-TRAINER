@@ -48,7 +48,7 @@ Version 1.01:
 * Modular groups to toggle between captioning and training (these are separated to inspect your Json file to make you desired changes if needed).
 * You can customize your workflow with your prefered nodes, being able to click and run all in a single shot.
 * You just need to pass your videos folder and set up your trigger lora. Everything is packed in the same folder, the json is generated with the same name of your lora.
-* Compatible with 12GB of VRAM (need minimum 96GB of Ram to run smoothly in 8 bits, needed for quantization).
+* Compatible with 12GB of VRAM (need minimum 96GB of Ram to be able to quantize text encoder and checkpoints in real time (You can always download an already quantized compatible checkpoint, probally also the text encoder and be able to run it with 64GB of RAM).
 * Path injections for FFmpeg and LTX2 scripts to make it compatible with comfyUI. (Voices a are perfect with 2.3 version)
 
 
