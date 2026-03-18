@@ -25,7 +25,7 @@ Version 1.03:
 * Added requirements text file.
 * Updated workflow.
 * Added optimum module in the requirements package.
-* Added new instructions instalations.
+* Added new instalation instructions.
 
 Version 1.02:
 * Added a new workflow to split your long video into the desired bucket frame-len.
