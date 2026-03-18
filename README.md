@@ -15,8 +15,12 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
 
-* Update : The attached xformers wheel is for 40x0 series (ADA), don't use it in Blackwell.
-* We will continue udpating these days, we are making tests with Blackweel to ensure everything is ok (Ada architecture is fully tested and working).
+Version 1.03:
+* Blackwell fix detaching text encoder after quantization.
+* Added requirements text file.
+* Updated workflow.
+* Added optimum module in the requirements package.
+* Added new instrunctions instalations.
 
 Version 1.02:
 * Added a new workflow to split your long video into the desired bucket frame-len.
@@ -154,7 +158,7 @@ After the first validation loop everything is stable, a proof of the ending step
 
 **Troubleshootings**:
 
-* You must to Run in Xformers or Flash attention 3.
+* You must to Run in Xformers or Flash attention 3 depending if you are using Blackwell or Ada (Xformers for ada is provided in the package [pytorch 2.10 cu130 compatible]. Find your compatible wheel if you want to use flash attention 3 for Blackwell depending of your environment).
 
 * Be sure to make a restart after creating you JSON caption (Clear Vram because transcribe nodes does not free the vram memory).
 
@@ -179,14 +183,15 @@ After the first validation loop everything is stable, a proof of the ending step
 
 * Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/tree/main
 * You can use any of the LTX.2X .safetensors models.
-
-**Dependencies needed (python -m pip install)**:
-* uv_build
-* hatchling
-* editables
+* open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\:
+* ..\..\..\python_embeded\python -m pip install -r requirements.txt
+* open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\LTX-2:
+* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-core
+* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-pipelines
+* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
 
 **Other custom nodes dependencies for the alternative captioner x100 faster (kudos for the creators)**
-* TTS audio suite from https://github.com/diodiogod/TTS-Audio-Suite. Kudos.
+* TTS audio suite
 * comfyui-qwenvl
 * ComfyUI-Custom-Scripts
 * ComfyUI-Easy-Use
@@ -194,26 +199,10 @@ After the first validation loop everything is stable, a proof of the ending step
 * comfy-mtb
 * custom-scripts
 
-**xformers wheel for python 2.10 cuda 130 python 3.13 for Ada architecture (for Blackwell you will probally need to use flash_attention_3) **
-
-* Install the xformers wheel provided in the package in your python environment ".\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl". Be sure to clean your previous xformers version.
-
-pip install -e packages/ltx-core
-
-pip install -e packages/ltx-pipelines
-
-pip install -e packages/ltx-ltx-trainer
-
-**for portable (open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\LTX-2)**:
-
-..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-core
-
-..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-pipelines
-
-..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
-
-
-
+**40x0 series (Ada) IF you want to use xformers with pytorch 2.10 cuda 130, install the wheel provided in the package** 
+* Be sure to clean your previous xformers instalation.
+* Place the xformers file in the root of the python_embeded folder.
+* In python_embeded foler -->   .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 
 <img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
