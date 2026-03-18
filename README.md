@@ -184,11 +184,26 @@ After the first validation loop everything is stable, a proof of the ending step
 * Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/tree/main
 * You can use any of the LTX.2X .safetensors models.
 * open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\:
-* ..\..\..\python_embeded\python -m pip install -r requirements.txt
+```  
+..\..\..\python_embeded\python -m pip install -r requirements.txt
+```
 * open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\LTX-2:
-* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-core
-* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-pipelines
-* ..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
+```  
+..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-core
+```
+```
+..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-pipelines
+```
+```
+..\\..\\..\\..\\python\_embeded\\python -m pip install -e packages/ltx-trainer
+```
+* 40x0 series (Ada) IF you want to use xformers with pytorch 2.10 cuda 130, install the wheel provided in the package:
+* Be sure to clean your previous xformers instalation.
+* Place the xformers file in the root of the python_embeded folder.
+* In python_embeded foler:
+```
+.\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
+```
 
 **Other custom nodes dependencies for the alternative captioner x100 faster (kudos for the creators)**
 * TTS audio suite
@@ -198,11 +213,6 @@ After the first validation loop everything is stable, a proof of the ending step
 * ComfyUI-VideoHelperSuite
 * comfy-mtb
 * custom-scripts
-
-**40x0 series (Ada) IF you want to use xformers with pytorch 2.10 cuda 130, install the wheel provided in the package** 
-* Be sure to clean your previous xformers instalation.
-* Place the xformers file in the root of the python_embeded folder.
-* In python_embeded foler -->   .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 
 <img width="960" height="256" alt="Flux2-Klein_00014_" src="https://github.com/user-attachments/assets/f171b752-6fcf-4e37-b98c-d162056700d0" />
 
