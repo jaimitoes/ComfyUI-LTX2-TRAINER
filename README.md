@@ -118,17 +118,19 @@ After the first validation loop everything is stable, a proof of the ending step
 
 * MultiGpu should work, i take care to retain all the logic of the core but removed some progress stadistic like bars (printing steps instead). to place all the training data in the main process, keeping just the training in the multiprocess (in search of performance). Unfortunately, i don't have a MultiGpu system to test it. But, if you any issue let me know and i will fix it.
 
+**CAPTIONING**
+
+* You can use the Qwen3VL subgraph or the oficially QwenOmni 2.5 to caption description and speech. The subgraph is much faster being able to select your desired models to describe and transcribe in many languages. QwenOmni is much heavy and a bit less accurate with prompts. if you ask me, choose Qwen3 subgraph.
+<img width="1065" height="503" alt="Captura de pantalla 2026-03-18 010957" src="https://github.com/user-attachments/assets/ceb7ef42-d64c-4af3-b4f5-df1cff9bf58c" />
+
+* Important note for Qwen3:  Custom nodes changes between updates, in the moment of pushing this, new options as setted up qwen vl nodes (Also there is different repositories with the same and can create conflicts), use the 2.1.0 QwenVL version or manage to fix it in newer versions. Make sure to enter into the subgraph and check everything again (subgraphs are a bit dirty in that aspect).
+<img width="1296" height="566" alt="Captura de pantalla 2026-03-17 220825" src="https://github.com/user-attachments/assets/17fb5fe2-6d61-46ad-98ef-291a114e2d79" />
+* The Qwen subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture (this could change between versions but you will be able to set up it):
+<img width="1888" height="730" alt="Captura de pantalla 2026-03-17 222702" src="https://github.com/user-attachments/assets/c832a22c-2eda-4f67-8167-293f2facb25b" />
+
 **Troubleshootings**:
 
 * You must to Run in Xformers or Flash attention 3.
-
-* The only subgraph could be broken of what is showing depending of the comfyUI version. It must be like this picture:
-
-<img width="1296" height="566" alt="Captura de pantalla 2026-03-17 220825" src="https://github.com/user-attachments/assets/17fb5fe2-6d61-46ad-98ef-291a114e2d79" />
-
-* Custom nodes changes between updates, in the moment of pushing this, new options as setted up qwen vl nodes (Also there is different repositories with the same and can create conflicts), use the 2.1.0 QwenVL version,  make sure to enter into the subgraph and check everything again (subgraphs are a bit dirty in that aspect).
-  
-<img width="1888" height="730" alt="Captura de pantalla 2026-03-17 222702" src="https://github.com/user-attachments/assets/c832a22c-2eda-4f67-8167-293f2facb25b" />
 
 * Be sure to make a restart after creating you JSON caption (Clear Vram because transcribe nodes does not free the vram memory).
 
@@ -140,7 +142,11 @@ After the first validation loop everything is stable, a proof of the ending step
 
 <img width="1015" height="500" alt="Captura de pantalla 2026-03-17 230741" src="https://github.com/user-attachments/assets/b781121d-b58f-4e88-9040-d70bc6b67121" />
 
-* training that appears blocked or too slow, try restart your computer, turn off any app, clean torch, cuda, comfy caches, try it offline, the custom qwen3 captioner graph and train are compatible offline, Qwen Omni needs internet, you will see a noticeable difference.
+
+**training that appears blocked or too slow** 
+
+* Qwen3 subgraph does not clean the Vram after the Json generation, be sure to restart comfy after captioning.
+* try restart your computer, turn off any app, clean torch, cuda, comfy caches, try it offline, the custom qwen3 captioner graph and train are compatible offline, Qwen Omni needs internet, you will see a noticeable difference.
 
 **Instalation instruction**:
 
