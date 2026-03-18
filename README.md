@@ -14,9 +14,9 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 **Adaptation of the LTX2-Training lora for ComfyUI**.
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
-* Update : a new version will be comming to fix  8bits quantization for models in Blackwell architecture. (previous version was tweaked to make it work with Ada, but it will be compatible for both).
+
 * The attached xformers wheel is for 40x0 series (ADA), don't use it in Blackwell.
-* We will continue udpating these days, we are making tests with Blackweel to ensure everything is ok and already fixed some things (Ada architecture is fully tested and working).
+* We will continue udpating these days, we are making tests with Blackweel to ensure everything is ok (Ada architecture is fully tested and working).
 
 Version 1.02:
 * Added a new workflow to split your long video into the desired bucket frame-len.
