@@ -128,7 +128,7 @@ After the first validation loop everything is stable, a proof of the ending step
 
 * A i said before, a single validation Will give you the fastest inference in the full training, but multiple validations Will give you more quality making the model evaluating it. But tested with a single validation with Good results, perfect voice and getting the character. Test and make your choice.
 
-* MultiGpu should work, i take care to retain all the logic of the core but removed some progress stadistic like bars (printing steps instead). to place all the training data in the main process, keeping just the training in the multiprocess (in search of performance). Unfortunately, i don't have a MultiGpu system to test it. But, if you any issue let me know and i will fix it.
+* MultiGpu should work, i take care to retain all the logic of the core but removed some progress stadistic like bars (printing steps instead). to place all the training data in the main process, keeping just the training in the multiprocess (in search of performance). Unfortunately, i don't have a MultiGpu system to test it. But, if you have any issue let me know and i will fix it.
 
 
 **CREATES YOUR VIDEO BUCKET**
