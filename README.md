@@ -15,7 +15,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
 
-* The attached xformers wheel is for 40x0 series (ADA), don't use it in Blackwell.
+* Update : The attached xformers wheel is for 40x0 series (ADA), don't use it in Blackwell.
 * We will continue udpating these days, we are making tests with Blackweel to ensure everything is ok (Ada architecture is fully tested and working).
 
 Version 1.02:
