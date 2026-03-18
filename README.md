@@ -15,6 +15,7 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 Version 1.01:
 * Instructions updated.
 * Link to the proper text encoder for training fixed.
+* Added the compatible xformers wheel for training in pytorch 2.10 cuda 130.
 * Tested and working. (if you see any troubles pin your issue).
 
 
@@ -169,6 +170,10 @@ After the first validation loop everything is stable, a proof of the ending step
 * ComfyUI-Easy-Use
 * ComfyUI-VideoHelperSuite
 * comfy-mtb
+
+**xformers wheel for python 2.10 cuda 130 python 3.13**
+
+* Install the xformers wheel provided in the package in your python environment ".\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl". Be sure to clean your previous xformers version.
 
 pip install -e packages/ltx-core
 
