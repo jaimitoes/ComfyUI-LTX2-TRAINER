@@ -73,6 +73,7 @@ Version 1.01:
 
 * NVIDIA RTX 4070 SUPER 12GB VRAM
 * 128GB RAM
+
 *DATASET*:
 
 * 53 videos 640x320x49f.
@@ -149,8 +150,11 @@ After the first validation loop everything is stable, a proof of the ending step
 
 <img width="1015" height="500" alt="Captura de pantalla 2026-03-17 230741" src="https://github.com/user-attachments/assets/b781121d-b58f-4e88-9040-d70bc6b67121" />
 
+* If the subgraph presets are loosed (caused by comfy updates) reset it and activate the following in the picture :
+<img width="2272" height="683" alt="image" src="https://github.com/user-attachments/assets/40f2a5a0-888a-44d0-9644-cd845d659adb" />
 
-**training that appears blocked or too slow** 
+
+**training that appears blocked or too slow**:
 
 * Qwen3 subgraph does not clean the Vram after the Json generation, be sure to restart comfy after captioning.
 * try restart your computer, turn off any app, clean torch, cuda, comfy caches, try it offline, the custom qwen3 captioner graph and train are compatible offline, Qwen Omni needs internet, you will see a noticeable difference.
