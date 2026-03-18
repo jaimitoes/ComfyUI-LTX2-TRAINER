@@ -113,7 +113,7 @@ After the first validation loop everything is stable, a proof of the ending step
 * After code changes, graphs nevermore recompiles mantaining the stability until the end of training.
 * There is the need of one loop Interval between train/eval to starting watching the performance and stability. Probally this is not happening in big Gpus but take into account that, you are training with 12GB and this is already a success so, start the train, go to sleep and enjoy it in the morning.
 
-* Conclusion : With this customized LTX2 library, you are able to train a Lora in Low Vram, but be realistic, take care about your configs to not fullfiling your memory making an infite bottleneck during traing. And those that handle better gpus will notice a big boost of performance.
+* Conclusion : With this customized LTX2 library, you are able to train a Lora in Low Vram, but be realistic, take care about your configs to not fullfiling your memory making an infinite bottleneck during training. And those that handle better gpus will notice a big boost of performance.
 
 **Things to take into consideration**: 
 
