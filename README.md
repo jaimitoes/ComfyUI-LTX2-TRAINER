@@ -126,6 +126,15 @@ After the first validation loop everything is stable, a proof of the ending step
 
 * MultiGpu should work, i take care to retain all the logic of the core but removed some progress stadistic like bars (printing steps instead). to place all the training data in the main process, keeping just the training in the multiprocess (in search of performance). Unfortunately, i don't have a MultiGpu system to test it. But, if you any issue let me know and i will fix it.
 
+
+**CREATES YOUR VIDEO BUCKET**
+
+* Joint your desired scenes to train in a long video, then you can use this workflow to split your video to the same length as the frames you're going to fit in the bucket:
+
+<img width="1858" height="476" alt="image" src="https://github.com/user-attachments/assets/4301e64e-4a9c-4de2-bd1c-4ad2d58e039f" />
+
+
+
 **CAPTIONING**
 
 * You can use the Qwen3VL subgraph or the oficially QwenOmni 2.5 to caption description and speech. The subgraph is much faster being able to select your desired models to describe and transcribe in many languages. QwenOmni is much heavy and a bit less accurate with prompts. if you ask me, choose Qwen3 subgraph.
@@ -142,7 +151,7 @@ After the first validation loop everything is stable, a proof of the ending step
 
 * Be sure to make a restart after creating you JSON caption (Clear Vram because transcribe nodes does not free the vram memory).
 
-* To download automatically caption models you need HF online but, If you are getting issues with hf or Transformers, in the step of training [after getting models] go to the file "ltx_environment.py" and uncomment the offline of this modules (a restart of the console is required).
+* To download automatically caption models you need HF online but, if you are getting issues with hf or Transformers starting the training [after getting models] go to the file "ltx_environment.py" and uncomment the offline of this modules (a restart of the console is required).
 
 <img width="695" height="325" alt="Captura de pantalla 2026-03-17 224636" src="https://github.com/user-attachments/assets/46297862-c0f2-42e0-b793-4e3e27db78db" />
 
