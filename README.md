@@ -14,6 +14,11 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 **Adaptation of the LTX2-Training lora for ComfyUI**.
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
+How to update:
+* open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\:
+```
+git pull
+```
 
 Version 1.03:
 * Blackwell fix detaching text encoder after quantization.
