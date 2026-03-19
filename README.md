@@ -213,7 +213,7 @@ After the first validation loop everything is stable, a proof of the ending step
 .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 ```
 
-* For Blackwell, you must to search a flash attention 3 wheel compatible with your environment or not using any attention. flash 2.8.3 seems to work slower.
+* For Blackwell, you must to search a flash attention 3 wheel compatible with your environment or not using any attention. flash 2.8.3 seems to work slower, uninstall it.
 
 * (If you use linux there is wheels for Flash 3 on internet)
 
