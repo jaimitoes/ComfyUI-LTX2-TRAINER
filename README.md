@@ -22,6 +22,8 @@ git pull
 
 * Quick note: if you clone this repository by using github desktop it will be easier to track updates and pulling, choose your desired way to do this. If it's not working for you probally you are missing a dependency module instalation. Pay attention to this.
 
+* New information note : For Blackwell, you must to search a flash attention 3 wheel compatible with your environment or not using any attention (there is plenty of them for linux). Flash 2.8.3 seems to work much slower (uninstall it for Blackwell envrionments).
+
 Version 1.04:
 * Updated requirements adding optimum-quanto.
 
@@ -211,10 +213,7 @@ After the first validation loop everything is stable, a proof of the ending step
 .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 ```
 
-*50x0 series (Blackwell) We found a working flash 2.8.3 wheel for windows  https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.13/flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl
-```
-.\python -m pip install flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl
-```
+* For Blackwell, you must to search a flash attention 3 wheel compatible with your environment or not using any attention. flash 2.8.3 seems to work slower.
 
 * (If you use linux there is wheels for Flash 3 on internet)
 
