@@ -208,7 +208,7 @@ After the first validation loop everything is stable, a proof of the ending step
 * 40x0 series (Ada) IF you want to use xformers with pytorch 2.10 cuda 130, install the wheel provided in the package:
 * Be sure to clean your previous xformers instalation.
 * Place the xformers file in the root of the python_embeded folder.
-* In python_embeded foler:
+* In python_embeded folder:
 ```
 .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 ```
