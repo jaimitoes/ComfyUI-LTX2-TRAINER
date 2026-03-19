@@ -185,7 +185,7 @@ After the first validation loop everything is stable, a proof of the ending step
 * Qwen3 subgraph does not clean the Vram after the Json generation, be sure to restart comfy after captioning.
 * try restart your computer, turn off any app, clean torch, cuda, comfy caches, try it offline, the custom qwen3 captioner graph and train are compatible offline, Qwen Omni needs internet, you will see a noticeable difference.
 
-**Instalation instruction**:
+**Instalation instruction (TESTED FOR WINDOWS)**:
 
 * Downlolad the text encoder for training in https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/tree/main
 * You can use any of the LTX.2X .safetensors models.
@@ -210,6 +210,13 @@ After the first validation loop everything is stable, a proof of the ending step
 ```
 .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 ```
+
+*50x0 series (Blackwell) We found a working flash 2.8.3 wheel for windows  https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.13/flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl (If you use linux there is wheels for Flash 3 on internet).
+
+```
+.\python -m pip install flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl
+```
+
 
 **Other custom nodes dependencies for the alternative captioner x100 faster (kudos for the creators)**
 * TTS audio suite
