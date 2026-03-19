@@ -1,0 +1,7 @@
+uv_build
+hatchling
+editables
+optimum
+optimum-quanto
+diffusers
+torchao
