@@ -22,6 +22,7 @@ git pull
 * Quick note: if you clone this repository by using github desktop it will be easier to track updates and pulling, choose your desired way to do this.
 Version 1.04:
 * Updated requirements adding optimum-quanto.
+* Quick note: if it's not working for you probally you are missing a dependency module instalation. Pay attention to this.
 Version 1.03:
 * Blackwell fix detaching text encoder after quantization.
 * Added requirements text file.
