@@ -211,12 +211,12 @@ After the first validation loop everything is stable, a proof of the ending step
 .\python -m pip install xformers-0.0.34%2Btorch2.10cu130-cp39-abi3-win_amd64.whl".
 ```
 
-*50x0 series (Blackwell) We found a working flash 2.8.3 wheel for windows  https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.13/flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl (If you use linux there is wheels for Flash 3 on internet).
-
+*50x0 series (Blackwell) We found a working flash 2.8.3 wheel for windows  https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.13/flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl
 ```
 .\python -m pip install flash_attn-2.8.3+cu130torch2.10-cp313-cp313-win_amd64.whl
 ```
 
+* (If you use linux there is wheels for Flash 3 on internet)
 
 **Other custom nodes dependencies for the alternative captioner x100 faster (kudos for the creators)**
 * TTS audio suite
