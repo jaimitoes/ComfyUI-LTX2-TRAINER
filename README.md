@@ -197,13 +197,13 @@ After the first validation loop everything is stable, a proof of the ending step
 ```
 * open terminal in custom_nodes\ComfyUI-LTX2-TRAINER\LTX-2:
 ```  
-..\..\..\..\python\_embeded\\python -m pip install -e packages/ltx-core
+..\..\..\..\python_embeded\\python -m pip install -e packages/ltx-core
 ```
 ```
-..\..\..\..\python\_embeded\\python -m pip install -e packages/ltx-pipelines
+..\..\..\..\python_embeded\\python -m pip install -e packages/ltx-pipelines
 ```
 ```
-..\..\..\..\python\_embeded\\python -m pip install -e packages/ltx-trainer
+..\..\..\..\python_embeded\\python -m pip install -e packages/ltx-trainer
 ```
 * 40x0 series (Ada) IF you want to use xformers with pytorch 2.10 cuda 130, install the wheel provided in the package:
 * Be sure to clean your previous xformers instalation.
