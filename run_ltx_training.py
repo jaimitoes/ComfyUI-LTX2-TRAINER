@@ -37,12 +37,9 @@ def main():
     parser.add_argument("--extra", type=str, default=None)
     parser.add_argument("--disable_progress_bars", action="store_true")
     parser.add_argument("--dynamo_cache_size_limit", type=str, default= "8")
-
     args = parser.parse_args()
-    if args.dynamo_cache_size_limit:
-        os.environ["DYNAMO_CACHE"] = args.dynamo_cache_size_limit
-        del args.dynamo_cache_size_limit
-
+    os.environ["DYNAMO_CACHE"] = args.dynamo_cache_size_limit
+    del args.dynamo_cache_size_limit
     with open(args.config_path, "r", encoding="utf-8") as f:
         config_data = yaml.safe_load(f)
     

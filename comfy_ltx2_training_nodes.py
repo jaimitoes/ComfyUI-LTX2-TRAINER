@@ -431,6 +431,8 @@ class LTX2_SceneSplitter:
         try:
             pbar = comfy.utils.ProgressBar(100)
             current_env = _get_subprocess_env()
+
+            
             
             process = subprocess.Popen(
                 cmd,
@@ -496,7 +498,8 @@ class LTX2_AutoCaptioning:
                 "with_audio": ("BOOLEAN", {"default": True}),
                 "clean_context": (["clean_caption", "raw_caption"], {"default": "clean_caption", "tooltip": "Whether to clean up captions by removing common VLM patterns"}),
                 "skip_if_exists": ("BOOLEAN", {"default": True}),
-                "instruction": ("STRING", {"multiline": True, "default": "Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections:\n[VISUAL]: <Detailed description of people, objects, actions, settings, colors, and movements>\n[SPEECH]: <Word-for-word transcription of everything spoken.\n           Listen carefully and transcribe the exact words. If no speech, write ""None"">\n[SOUNDS]: <Description of music, ambient sounds, sound effects. If none, write ""None"">\n[TEXT]: <Any on-screen text visible. If none, write ""None"">\nYou MUST fill in all four sections. For [SPEECH], transcribe the actual words spoken, not a summary.", "tooltip": "If you keep blank, it will take the default video or video-audio depending of your setting to set the english instruction"})
+                "instruction": ("STRING", {"multiline": True, "default": "Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections:\n[VISUAL]: <Detailed description of people, objects, actions, settings, colors, and movements>\n[SPEECH]: <Word-for-word transcription of everything spoken.\n           Listen carefully and transcribe the exact words. If no speech, write ""None"">\n[SOUNDS]: <Description of music, ambient sounds, sound effects. If none, write ""None"">\n[TEXT]: <Any on-screen text visible. If none, write ""None"">\nYou MUST fill in all four sections. For [SPEECH], transcribe the actual words spoken, not a summary.", "tooltip": "If you keep blank, it will take the default video or video-audio depending of your setting to set the english instruction"}),
+                "cuda_visible_devices": ("STRING", {"default": "0", "tooltip": "Make visible your gpus by setting it per commas, example: 0 or 0,1,2"}),
             }  
                 
         }
@@ -506,12 +509,13 @@ class LTX2_AutoCaptioning:
     FUNCTION = "execute"
     CATEGORY = "LTX-2 / Dataset"
 
-    def execute(self, video_directory, dataset_name, device, precision, fps, with_audio, clean_context, skip_if_exists, instruction):
+    def execute(self, video_directory, dataset_name, device, precision, fps, with_audio, clean_context, skip_if_exists, instruction, cuda_visible_devices):
         if not video_directory or not os.path.exists(video_directory):
             raise RuntimeError(f"LTX-2 Caption Error: Video directory not found: {video_directory}")
         output_filename = dataset_name + ".json"
         current_env = _get_subprocess_env()
-        current_env["HF_HUB_OFFLINE"] = "0"
+        current_env["CUDA_VISIBLE_DEVICES"] = cuda_visible_devices
+        print(f"CURRENT CUDA GPUS ARE : {cuda_visible_devices}")
         video_dir_path = Path(video_directory).resolve()
         output_path = video_dir_path / output_filename if not os.path.isabs(output_filename) else Path(output_filename)
         
@@ -619,6 +623,7 @@ class LTX2_RunPreprocess:
                 "decode_preprocess": ("BOOLEAN", {"default": False, "tooltip": "This allows you to visually and audibly inspect the processed data. Other files will skip the process if exists but decode always happend so, \n if you will use existing dataset, you can disable it in the next running."}),
                 "reference_path": ("STRING", {"default": "", "tooltip": " IC lora mode must be seteed. Refernce videos as Depth or Pose must be included in the directory and setted up in the Json file as \"/\"reference_path\"/\": \"/\"cat_playing_depth.mp4\"/\""}),
                 "lora_trigger": ("STRING", {"default": "My_lora_trigger"}),
+                "cuda_visible_devices": ("STRING", {"default": "0", "tooltip": "Make visible your gpus by setting it per commas, example: 0 or 0,1,2"}),
                 
             }
         }
@@ -628,7 +633,7 @@ class LTX2_RunPreprocess:
     FUNCTION = "execute"
     CATEGORY = "LTX-2 / Dataset"
 
-    def execute(self, trigger, config_path, ltx_config, dataset_override, batch_size, device, vae_tiling, load_encoder_in_8bit, decode_preprocess, reference_path, lora_trigger):
+    def execute(self, trigger, config_path, ltx_config, dataset_override, batch_size, device, vae_tiling, load_encoder_in_8bit, decode_preprocess, reference_path, lora_trigger, cuda_visible_devices):
         
         if not trigger:
             raise RuntimeError("LTX-2 Preprocess HALTED: Previous Captioning node failed or was skipped incorrectly.")
@@ -638,6 +643,8 @@ class LTX2_RunPreprocess:
         if not os.path.exists(dataset_file):
             raise RuntimeError(f"LTX-2 Preprocess Error: Dataset file not found: {dataset_file}")
         current_env = _get_subprocess_env()
+        current_env["CUDA_VISIBLE_DEVICES"] = cuda_visible_devices
+        print(f"CURRENT CUDA GPUS ARE : {cuda_visible_devices}")
         pre_dir = ltx_config['data']['preprocessed_data_root']
         script = _resolve_script_path("process_dataset.py")
         
@@ -739,6 +746,7 @@ class LTX2_RunTraining:
                 "dynamo_backend": (["inductor", "eager", "no"], {"default" : "inductor"}),
                 "dynamo_cache_size_limit": ("INT", {"default" : 64, "min": 8, "max": 4096, "tooltip": " 64 seems to be enough after recompile fixes. \n it recompiles 2 times at the begining for validation and train and nevermore break. But feel free to test other values"}),
                 "disable_progress_bars": ("BOOLEAN", {"default": True}),
+                "cuda_visible_devices": ("STRING", {"default": "0", "tooltip": "Make visible your gpus by setting it per commas, example: 0 or 0,1,2"}),
                 "fsdp_path": ("STRING", {"default": "", "tooltip": "Accelerate launch : Enable fsdp_multiGPU by giving a path"}),
                 "extra_args": ("STRING", {"multiline": True, "default": "{}"}),
             }
@@ -749,7 +757,7 @@ class LTX2_RunTraining:
     OUTPUT_NODE = True
     CATEGORY = "LTX-2 / Trainer"
 
-    def execute(self, trigger, config_path, ltx_config, num_processes, num_cpu_threads_per_process, mixed_precision, attention, use_accelerate, dynamo_backend, dynamo_cache_size_limit, disable_progress_bars,  fsdp_path, extra_args):
+    def execute(self, trigger, config_path, ltx_config, num_processes, num_cpu_threads_per_process, mixed_precision, attention, use_accelerate, dynamo_backend, dynamo_cache_size_limit, disable_progress_bars,  cuda_visible_devices, fsdp_path, extra_args):
         # 1. Basic validation
         if "error" in str(trigger).lower(): 
             return ("Skipped",)
@@ -817,14 +825,19 @@ class LTX2_RunTraining:
             cmd.append("--disable_progress_bars")
 
 
-        cmd.extend(["--dynamo_cache_size_limit", str(dynamo_cache_size_limit)])
+        cmd.extend(
+            [
+                "--dynamo_cache_size_limit", str(dynamo_cache_size_limit),
+            ]
+        )
         
        
         
         print("\nLTX2 COMMANDS:", " ".join(cmd))
        
         custom_env = _get_subprocess_env()
-
+        custom_env["CUDA_VISIBLE_DEVICES"] = cuda_visible_devices
+        print(f"CURRENT CUDA GPUS ARE : {cuda_visible_devices}")
        
         
         
