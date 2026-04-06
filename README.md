@@ -20,11 +20,11 @@ How to update:
 git pull
 ```
 
-* About Updates: if you clone this repository by using github desktop it will be easier to track updates and pulling, choose your desired way to do this. If it's not working for you probally you are missing a dependency module instalation. Pay attention to this.
+* About updates: if you clone this repository by using github desktop it will be easier to track updates and pulling, choose your desired way to do this. If it's not working for you probally you are missing a dependency module instalation. Pay attention to this.
 
 * New info note : If you are on Windows and using Blackwell, uninstall all the attention modules (xformers, flash 2.8.3, i don't know if sageattention can affect but LTX2 don't use it). In our environment with ComfyUI and pytorch 2.10 and uninstalling all attentions makes Blackwell with native attention and performing much better. If you can find a flash attention 3 wheel compatible with your environment then yes, you will see a performance boost (there is plenty of them for linux). Flash 2.8.3 seems to work much slower (uninstall it for Blackwell envrionments).
 
-Quicknote : The code has many changes giving extra optimizations compared to the oficial trainer, improving Dynamo Inductor and memory management. I noticed this days fewer updates from Lightricks in their packages. As the current version is working great, i will give a time to add the newest Lightricks implementations (rebuilding the code takes time and the LightTricks commits does not stop during the early stages). Whatever, this build works perfectly creating amazing LoRAs in single gpu (not tested in multi-gpu, but you can always post an issue in case).
+* About versions : The code has many changes giving extra optimizations compared to the oficial trainer, improving Dynamo Inductor and memory management. I noticed this days fewer updates from Lightricks in their packages. As the current version is working great, i will give a time to add the newest Lightricks implementations (rebuilding the code takes time and the LightTricks commits does not stop during the early stages). Whatever, this build works perfectly creating amazing LoRAs in single gpu (not tested in multi-gpu, but you can always post an issue in case).
 
 Version 1.05:
 * Added CUDA_VISIBLE_DEVICES into nodes for multi/single gpu compatibility. For multi-gpu, it seems you can't use the shared memory (sytem ram).
