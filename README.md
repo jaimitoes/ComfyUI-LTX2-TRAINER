@@ -5,12 +5,6 @@ LoRA trainer for LTX 2.X video generation models in ComfyUI
 **LTX2-TRAINER BATMAN EDITION**
 <img width="1920" height="512" alt="Flux2-Klein_00015_" src="https://github.com/user-attachments/assets/3d80e48b-8893-4f60-9f21-be2123baf87e" />
 
-<a href="https://buymeacoffee.com/JaimitoEs" target="\_blank">
-
-&#x20; <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
-
-</a>
-
 **Adaptation of the LTX2-Training lora for ComfyUI**.
 <img width="1812" height="761" alt="Captura de pantalla 2026-03-17 212625" src="https://github.com/user-attachments/assets/ad7b7a10-4d64-4346-9730-7c997dd397b7" />
 
@@ -120,7 +114,7 @@ Version 1.01:
 * Audio attends to video.
 * This is a total of 138M of parameters in rank 32. (higher ranks and modules add more parameters making it harder to compute, better quality but much slower to train in low Vram)
 
-* Final FP8 Lora : Best time around 5h (without taking into account validations) to generate a 2000 steps lora. So, i can't imagine with a 5090. Don't be rat and buy me a coffe.
+* Final FP8 Lora : Best time around 5h (without taking into account validations) to generate a 2000 steps lora. So, i can't imagine with a 5090.
 
 **FP8 LORA EXAMPLE (90's vhs style)**:
 
